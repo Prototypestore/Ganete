@@ -1,0 +1,35 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "title": "Health tips & lifestyle advice",
+      "description": "Transform ideas into visually striking creations that capture attention and communicate your message clearly. Our graphic design services ensure your brand stands out across digital and print mediums, enhancing engagement and memorability."
+    },
+    {
+      "id": 2,
+      "title": "Nutrition & diet articles",
+      "description": "Craft a cohesive brand identity that resonates with your audience and builds trust. From color palettes to brand voice, our branding solutions help businesses create a lasting impression, increase recognition, and drive customer loyalty."
+    },
+    {
+      "id": 3,
+      "title": "Mental health & wellness",
+      "description": "Your logo is the face of your business. We design unique, versatile, and timeless logos that reflect your brand values, leave a strong impression, and work seamlessly across websites, social media, and print materials."
+    },
+    {
+      "id": 4,
+      "title": "Fitness & movement",
+      "description": "Capture your audience’s attention with compelling visuals tailored for social media platforms. Our designs boost engagement, convey messages quickly, and maintain brand consistency across all posts and campaigns."
+    },
+    {
+      "id": 5,
+      "title": "Sexual health & relationships",
+      "description": "Unlock innovative and tailored design solutions that meet your business needs. Whether it’s promotional materials, web visuals, or product packaging, our creative approach maximizes impact and strengthens your brand presence."
+    }
+    ,
+    {
+      "id": 6,
+      "title": "FAQs",
+      "description": "Unlock innovative and tailored design solutions that meet your business needs. Whether it’s promotional materials, web visuals, or product packaging, our creative approach maximizes impact and strengthens your brand presence."
+    }
+  ]
+}
