@@ -90,7 +90,6 @@ main {
   top: 0;
   right: -260px;
   background: var(--secondary-color);
-  box-shadow: -10px 0 25px rgba(0,0,0,0.35);
   transition: right 0.35s ease;
   z-index: 1000;
 }
@@ -319,8 +318,9 @@ footer a {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    justify-items: stretch;
-    align-items: stretch;
+    justify-items: center;
+    align-items: center;
+    margin-top: 3rem;
   }
 
   .service-card {
@@ -373,6 +373,7 @@ footer a {
     text-align: center;
     color: #666666;  /* grey text */
     transition: color 0.25s ease;
+    text-decoration: none;
   }
 
   footer a:hover {
