@@ -101,7 +101,6 @@ main {
 /* =============================== MOBILE NAV & LAYOUT =============================== */
 @media (max-width: 768px) {
 
-  /* Hamburger button */
   .hamburger-btn {
     cursor: pointer;
     background: transparent;
@@ -112,19 +111,18 @@ main {
     justify-content: center;
   }
 
-  /* Side menu */
   #sideMenu {
     display: flex;
     flex-direction: column;
     gap: 0;
     padding-top: 80px;
-    width: 260px;
+    width: 280px;
     height: 100vh;
     position: fixed;
     top: 0;
-    right: -260px;
+    right: -280px;
     background: var(--secondary-color);
-    box-shadow: -8px 0 25px rgba(0,0,0,0.35);
+    box-shadow: -10px 0 25px rgba(0,0,0,0.35);
     transition: right 0.35s ease;
     z-index: 1000;
   }
@@ -134,7 +132,6 @@ main {
   }
 
   #sideMenu a {
-    display: block;
     color: var(--bg-color);
     font-size: 1rem;
     font-weight: 600;
@@ -148,7 +145,7 @@ main {
 
   #sideMenu a:hover,
   #sideMenu a:focus {
-    background: rgba(61, 189, 236, 0.12);
+    background: rgba(61, 189, 236, 0.15);
     color: var(--accent-color);
   }
 
@@ -156,38 +153,32 @@ main {
     overflow: hidden;
   }
 
-  /* =============================== CONTENT PADDING =============================== */
+  /* ================= CONTENT SPACING */
   #content {
-    padding: 3rem 1rem 5rem;
+    padding: 3rem 1.25rem 5rem;
+    gap: 4rem;
     display: flex;
     flex-direction: column;
-    gap: 4.5rem; /* more airy spacing */
-    align-items: center;
   }
 
-  /* =============================== SERVICES HEADER =============================== */
-  .services-header {
-    text-align: center;
-    gap: 1rem;
-  }
-
-  .services-header h1,
-  .services-header h2 {
-    font-size: 1.9rem;
-    line-height: 1.2;
-  }
-
+  /* ======================== ABOUT & GENERAL TEXT */
+  .about-section p,
   .services-header p {
-    font-size: 0.9rem;
-    line-height: 1.55;
-    max-width: 380px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 380px; /* readable line length */
     margin: 0 auto;
     text-align: center;
   }
 
-  /* =============================== SERVICES GRID =============================== */
+  .about-section h1,
+  .services-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  /* =========================== SERVICES GRID */
   .services-grid {
-    display: grid;
     grid-template-columns: 1fr;
     gap: 2.5rem;
     justify-items: center;
@@ -195,102 +186,59 @@ main {
 
   .service-card {
     width: 100%;
-    max-width: 380px; /* wider for readability */
-    padding: 2rem 1.8rem; /* airy padding */
+    max-width: 380px; /* wider for readable paragraphs */
+    padding: 1.8rem 1.6rem;
     border-radius: 16px;
     text-align: center;
     box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    gap: 0.8rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   .service-card .service-icon {
-    width: 50px;
-    height: 50px;
-    font-size: 1.9rem;
+    font-size: 2.1rem;
     margin-bottom: 0.6rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   .service-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
   }
 
-  .service-card p {
-    font-size: 0.88rem;
-    line-height: 1.55;
-    margin: 0 auto;
-  }
-
+  .service-card p,
   .service-card .service-content {
-    font-size: 0.85rem;
-    line-height: 1.55;
-    text-align: left;
-    margin-top: 0.5rem;
-  }
-
-  .service-card .service-content h4 {
-    font-size: 0.95rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .service-card .service-content p {
-    font-size: 0.85rem;
-    margin-bottom: 0.5rem;
-  }
-
-  /* =============================== ABOUT SECTION =============================== */
-  .about-section {
-    text-align: center;
-    gap: 1rem;
-    padding: 0 1rem;
-    max-width: 400px; /* readable width for paragraphs */
-    margin: 0 auto;
-  }
-
-  .about-section h1 {
-    font-size: 1.9rem;
-  }
-
-  .about-section p {
     font-size: 0.9rem;
     line-height: 1.55;
-    margin: 0 auto;
+    margin: 0.3rem auto 0;
+    max-width: 380px;
+    text-align: left;
   }
 
-  /* =============================== FOOTER =============================== */
+  /* =========================== FOOTER ADJUSTMENTS */
   footer {
     padding: 2rem 1rem;
-    gap: 0.8rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center; /* center all text and links */
   }
 
   footer p {
     font-size: 0.9rem;
-    line-height: 1.55;
     max-width: 380px;
+    text-align: center; /* properly centered now */
     margin: 0 auto;
+    line-height: 1.6;
   }
 
   footer a {
     display: block;
+    font-size: 0.95rem;
     margin: 0.3rem 0;
-    font-size: 0.9rem;
+    text-align: center;
   }
 
-  /* =============================== CONTACT BUTTON =============================== */
   .contact-btn {
-    padding: 0.65rem 1.5rem;
-    font-size: 0.9rem;
-    margin: 0 auto;
+    padding: 0.65rem 1.4rem;
+    font-size: 0.95rem;
   }
 }
-
 
 /* =============================== CONTACT BUTTON =============================== */
 .contact-btn {
