@@ -13,7 +13,7 @@ async function renderServices() {
   header.className = "services-header";
   header.innerHTML = `
     <h1>Our Blog & Services</h1>
-    <p>Explore our expert tips, guides, and resources on health, wellness, fitness, and lifestyle.</p>
+    <p>Explore our blog for practical tips, guides, and articles on health, wellness, and personal growth. From nutrition advice to stress management, lifestyle hacks, and self-improvement strategies, these resources are designed to give you clear, actionable insights. Whether you’re just starting your journey or looking for advanced guidance, our blog provides content to help you feel informed, motivated, and inspired.</p>
   `;
   container.appendChild(header);
 
