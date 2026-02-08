@@ -1,69 +1,40 @@
- "services": [
+{
+  "services": [
     {
       "id": 1,
       "title": "Health tips & lifestyle advice",
       "description": "Transform ideas into visually striking creations that capture attention and communicate your message clearly. Our graphic design services ensure your brand stands out across digital and print mediums, enhancing engagement and memorability.",
-      "content": `
-        <h4>Top Health Tips for Daily Life</h4>
-        <p>Stay hydrated, get enough sleep, and maintain a balanced diet. Exercise regularly to boost your energy and mood. Remember, small consistent habits lead to long-term health benefits.</p>
-        <h4>Lifestyle Advice</h4>
-        <p>Create a morning routine, reduce screen time, and practice mindfulness. These practices help you stay productive, focused, and mentally healthy.</p>
-      `
+      "content": "<h4>Top Health Tips for Daily Life</h4><p>Stay hydrated, get enough sleep, and maintain a balanced diet. Exercise regularly to boost your energy and mood. Remember, small consistent habits lead to long-term health benefits.</p><h4>Lifestyle Advice</h4><p>Create a morning routine, reduce screen time, and practice mindfulness. These practices help you stay productive, focused, and mentally healthy.</p>"
     },
     {
       "id": 2,
       "title": "Nutrition & diet articles",
       "description": "Craft a cohesive brand identity that resonates with your audience and builds trust. From color palettes to brand voice, our branding solutions help businesses create a lasting impression, increase recognition, and drive customer loyalty.",
-      "content": `
-        <h4>Understanding Balanced Nutrition</h4>
-        <p>Include proteins, healthy fats, and complex carbs in every meal. Focus on whole foods and reduce processed sugars to maintain energy levels and overall health.</p>
-        <h4>Sample Diet Tips</h4>
-        <p>Start your day with a nutritious breakfast, snack on fruits and nuts, and drink plenty of water. Customize meals based on dietary needs or allergies.</p>
-      `
+      "content": "<h4>Understanding Balanced Nutrition</h4><p>Include proteins, healthy fats, and complex carbs in every meal. Focus on whole foods and reduce processed sugars to maintain energy levels and overall health.</p><h4>Sample Diet Tips</h4><p>Start your day with a nutritious breakfast, snack on fruits and nuts, and drink plenty of water. Customize meals based on dietary needs or allergies.</p>"
     },
     {
       "id": 3,
       "title": "Mental health & wellness",
       "description": "Your logo is the face of your business. We design unique, versatile, and timeless logos that reflect your brand values, leave a strong impression, and work seamlessly across websites, social media, and print materials.",
-      "content": `
-        <h4>Mental Health Basics</h4>
-        <p>Practice mindfulness, meditation, and journaling to improve mental clarity and reduce stress. Seek professional support if needed, and maintain a strong support system.</p>
-        <h4>Wellness Tips</h4>
-        <p>Engage in hobbies, spend time outdoors, and ensure you take mental health days. Small breaks and self-care routines have a big impact.</p>
-      `
+      "content": "<h4>Mental Health Basics</h4><p>Practice mindfulness, meditation, and journaling to improve mental clarity and reduce stress. Seek professional support if needed, and maintain a strong support system.</p><h4>Wellness Tips</h4><p>Engage in hobbies, spend time outdoors, and ensure you take mental health days. Small breaks and self-care routines have a big impact.</p>"
     },
     {
       "id": 4,
       "title": "Fitness & movement",
       "description": "Capture your audience’s attention with compelling visuals tailored for social media platforms. Our designs boost engagement, convey messages quickly, and maintain brand consistency across all posts and campaigns.",
-      "content": `
-        <h4>Daily Movement & Exercise</h4>
-        <p>Incorporate cardio, strength training, and flexibility exercises into your weekly routine. Even a 20-minute walk can improve heart health and mood.</p>
-        <h4>Fitness Motivation</h4>
-        <p>Set achievable goals, track progress, and mix workouts to stay motivated. Consistency is key for long-term results.</p>
-      `
+      "content": "<h4>Daily Movement & Exercise</h4><p>Incorporate cardio, strength training, and flexibility exercises into your weekly routine. Even a 20-minute walk can improve heart health and mood.</p><h4>Fitness Motivation</h4><p>Set achievable goals, track progress, and mix workouts to stay motivated. Consistency is key for long-term results.</p>"
     },
     {
       "id": 5,
       "title": "Sexual health & relationships",
       "description": "Unlock innovative and tailored design solutions that meet your business needs. Whether it’s promotional materials, web visuals, or product packaging, our creative approach maximizes impact and strengthens your brand presence.",
-      "content": `
-        <h4>Healthy Relationships</h4>
-        <p>Communication and trust are the foundation of any relationship. Make time for your partner, listen actively, and respect boundaries.</p>
-        <h4>Sexual Health Tips</h4>
-        <p>Regular check-ups, safe practices, and open communication with partners promote sexual wellness. Educate yourself on your body and respect your limits.</p>
-      `
+      "content": "<h4>Healthy Relationships</h4><p>Communication and trust are the foundation of any relationship. Make time for your partner, listen actively, and respect boundaries.</p><h4>Sexual Health Tips</h4><p>Regular check-ups, safe practices, and open communication with partners promote sexual wellness. Educate yourself on your body and respect your limits.</p>"
     },
     {
       "id": 6,
       "title": "FAQs",
       "description": "Unlock innovative and tailored design solutions that meet your business needs. Whether it’s promotional materials, web visuals, or product packaging, our creative approach maximizes impact and strengthens your brand presence.",
-      "content": `
-        <h4>Common Questions</h4>
-        <p>We answer common queries about health, wellness, nutrition, and fitness. Stay informed and make smart choices for your lifestyle.</p>
-        <h4>Resources</h4>
-        <p>Check reliable sources like WHO, CDC, and medical journals for accurate information. Consult professionals when in doubt.</p>
-      `
+      "content": "<h4>Common Questions</h4><p>We answer common queries about health, wellness, nutrition, and fitness. Stay informed and make smart choices for your lifestyle.</p><h4>Resources</h4><p>Check reliable sources like WHO, CDC, and medical journals for accurate information. Consult professionals when in doubt.</p>"
     }
   ]
-};
+}
