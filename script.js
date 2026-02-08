@@ -12,7 +12,7 @@ fetch("content.json")
     aboutTitle.textContent = "Dr Gazern";
 
     const aboutText = document.createElement("p");
-    aboutText.textContent = "I am Dr Gazern, dedicated to helping people achieve better health, wellness, and lifestyle balance through expert guidance, practical advice, and personalized care.";
+    aboutText.textContent = "Hi, I’m Dr Gazern My journey started when I realized that so many people struggle to find reliable guidance in health, wellness, and personal growth. I am passionate about helping others achieve meaningful change through practical strategies and empathetic support. I value honesty, consistency, and empowerment, and I’ve spent years developing my skills through training, coaching, and real-life experience. My goal is to guide you in making sustainable improvements that improve your wellbeing and happiness.";
 
     aboutSection.appendChild(aboutTitle);
     aboutSection.appendChild(aboutText);
