@@ -51,7 +51,6 @@ main {
   border-bottom: 1px solid var(--card-border);
 }
 
-/* Logo */
 .header-container .logo img {
   height: 75px;
   width: 75px;
@@ -82,7 +81,7 @@ main {
   }
 
   #sideMenu a {
-    color: var(--secondary-color); /* dark blue on desktop */
+    color: var(--secondary-color);
     font-size: 1rem;
     font-weight: 500;
     text-decoration: none;
@@ -101,7 +100,6 @@ main {
 
 /* =============================== MOBILE NAV & LAYOUT =============================== */
 @media (max-width: 768px) {
-
   /* Hamburger button */
   .hamburger-btn {
     cursor: pointer;
@@ -118,7 +116,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 0;
-    padding-top: 80px;
+    padding-top: 90px;
     width: 280px;
     height: 100vh;
     position: fixed;
@@ -137,7 +135,7 @@ main {
   #sideMenu a {
     display: block;
     color: var(--bg-color);
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 600;
     padding: 1rem 1.5rem;
     text-decoration: none;
@@ -159,105 +157,80 @@ main {
 
   /* =============================== CONTENT PADDING =============================== */
   #content {
-    padding: 3rem 1.25rem 5rem;
+    padding: 4rem 1.5rem 6rem;
     display: flex;
     flex-direction: column;
-    gap: 3.5rem;
+    gap: 4rem; /* slightly more spacious for mobile */
   }
 
   /* =============================== SERVICES HEADER =============================== */
-  .services-header {
-    text-align: center;
-    gap: 1rem;
-  }
-
   .services-header h1,
   .services-header h2 {
-    font-size: 2rem;
-    line-height: 1.2;
+    font-size: 2.2rem;
   }
 
   .services-header p {
     font-size: 1rem;
-    line-height: 1.65;
-    max-width: 400px;
+    line-height: 1.6;
+    max-width: 420px;
     margin: 0 auto;
     text-align: center;
   }
 
   /* =============================== SERVICES GRID =============================== */
   .services-grid {
-    display: grid;
     grid-template-columns: 1fr;
     gap: 2.5rem;
     justify-items: center;
   }
 
   .service-card {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.8rem;
     border-radius: 16px;
     text-align: center;
-    max-width: 360px;
     width: 100%;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    max-width: 360px;
     transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.3s ease;
   }
 
   .service-card .service-icon {
     margin: 0 auto 0.5rem auto;
     font-size: 2rem;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
   }
 
   .service-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
   }
 
   .service-card p {
     font-size: 0.95rem;
     line-height: 1.6;
-    max-width: 360px;
     margin: 0 auto;
-    text-align: center;
   }
 
   /* =============================== ABOUT SECTION =============================== */
-  .about-section {
-    text-align: center;
-    gap: 1rem;
-    padding: 0 1rem;
-  }
-
   .about-section h1 {
     font-size: 2rem;
   }
 
   .about-section p {
     font-size: 1rem;
-    line-height: 1.65;
-    max-width: 400px;
+    line-height: 1.6;
+    max-width: 420px;
     margin: 0 auto;
-    text-align: center;
   }
 
   /* =============================== FOOTER =============================== */
   footer {
     padding: 2.5rem 1rem;
-    text-align: center;
     gap: 0.8rem;
-    flex-direction: column;
-    align-items: center;
   }
 
   footer p {
     font-size: 0.9rem;
     line-height: 1.6;
-    max-width: 400px;
+    max-width: 420px;
     margin: 0 auto;
-    text-align: center;
   }
 
   footer a {
@@ -270,7 +243,6 @@ main {
   .contact-btn {
     padding: 0.7rem 1.5rem;
     font-size: 1rem;
-    display: inline-block;
     margin: 0 auto;
   }
 }
