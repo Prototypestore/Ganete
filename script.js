@@ -12,7 +12,7 @@ fetch("content.json")
     aboutTitle.textContent = "Dr Gazern";
 
     const aboutText = document.createElement("p");
-    aboutText.textContent = "Hi, I’m Dr Gazern My journey started when I realized that so many people struggle to find reliable guidance in health, wellness, and personal growth. I am passionate about helping others achieve meaningful change through practical strategies and empathetic support. I value honesty, consistency, and empowerment, and I’ve spent years developing my skills through training, coaching, and real-life experience. My goal is to guide you in making sustainable improvements that improve your wellbeing and happiness.";
+    aboutText.textContent = "Hi, I’m Dr Gazern. My journey started when I realized that so many people struggle to find reliable guidance in health, wellness, and personal growth. I am passionate about helping others achieve meaningful change through practical strategies and empathetic support. I value honesty, consistency, and empowerment, and I’ve spent years developing my skills through training, coaching, and real-life experience. My goal is to guide you in making sustainable improvements that improve your wellbeing and happiness.";
 
     aboutSection.appendChild(aboutTitle);
     aboutSection.appendChild(aboutText);
@@ -27,12 +27,11 @@ fetch("content.json")
     h1.textContent = "Services";
 
     const servicesText = document.createElement("p");
-servicesText.textContent =
-  "I offer personalized coaching, structured plans, and consultations tailored to your unique needs. My services include: One-on-One Coaching: Targeted guidance to help you reach your goals efficiently. Custom Plans: Step-by-step strategies designed to improve your health, habits, and lifestyle.";
+    servicesText.textContent = "I offer personalized coaching, structured plans, and consultations tailored to your unique needs. My services include: One-on-One Coaching: Targeted guidance to help you reach your goals efficiently. Custom Plans: Step-by-step strategies designed to improve your health, habits, and lifestyle.";
 
-header.appendChild(h1);
-header.appendChild(servicesText);
-main.appendChild(header);
+    header.appendChild(h1);
+    header.appendChild(servicesText);
+    main.appendChild(header);
 
     /* ---------- SERVICES GRID ---------- */
     const grid = document.createElement("div");
@@ -42,7 +41,6 @@ main.appendChild(header);
       const card = document.createElement("div");
       card.className = "service-card";
 
-      // Use only the default icon for all services
       const icon = document.createElement("div");
       icon.className = "service-icon";
       icon.textContent = "⚕️";
@@ -53,9 +51,14 @@ main.appendChild(header);
       const p = document.createElement("p");
       p.textContent = service.description;
 
+      const contentDiv = document.createElement("div");
+      contentDiv.className = "service-content";
+      contentDiv.innerHTML = service.content; // ✅ includes full blog content
+
       card.appendChild(icon);
       card.appendChild(h3);
       card.appendChild(p);
+      card.appendChild(contentDiv); // add content
       grid.appendChild(card);
     });
 
