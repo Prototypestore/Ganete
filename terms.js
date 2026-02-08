@@ -2,14 +2,22 @@
 fetch("terms.json")
   .then(response => response.json())
   .then(data => {
+    const terms = data.termsAndConditions;
     const section = document.getElementById("terms");
 
+    // Defensive check to prevent errors
+    if (!terms || !terms.sections) {
+      throw new Error("Terms & Conditions data structure is invalid");
+    }
+
+    // Add title and last updated
     section.innerHTML = `
-      <h1>${data.title}</h1>
-      <p class="last-updated">Last updated: ${data.lastUpdated}</p>
+      <h1>${terms.title}</h1>
+      <p class="last-updated">Last updated: ${terms.lastUpdated}</p>
     `;
 
-    data.sections.forEach(item => {
+    // Add each section
+    terms.sections.forEach(item => {
       const block = document.createElement("div");
       block.className = "terms-block";
       block.innerHTML = `
@@ -19,6 +27,6 @@ fetch("terms.json")
       section.appendChild(block);
     });
   })
-  .catch(error => {
-    console.error("Terms failed to load:", error);
+  .catch(err => {
+    console.error("Terms & Conditions failed to load:", err);
   });
