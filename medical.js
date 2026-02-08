@@ -2,16 +2,24 @@
 fetch("medical.json")
   .then(response => response.json())
   .then(data => {
+    const disclaimer = data.medicalDisclaimer;
     const section = document.getElementById("medical");
 
-    section.innerHTML = `<h1>${data.title}</h1>`;
+    // Defensive check
+    if (!disclaimer || !disclaimer.content) {
+      throw new Error("Medical disclaimer data structure is invalid");
+    }
 
-    data.content.forEach(text => {
+    // Add title
+    section.innerHTML = `<h1>${disclaimer.title}</h1>`;
+
+    // Add each paragraph
+    disclaimer.content.forEach(text => {
       const p = document.createElement("p");
       p.textContent = text;
       section.appendChild(p);
     });
   })
-  .catch(error => {
-    console.error("Medical disclaimer failed to load:", error);
+  .catch(err => {
+    console.error("Medical disclaimer failed to load:", err);
   });
