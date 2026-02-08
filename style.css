@@ -99,83 +99,179 @@ main {
   }
 }
 
-/* =============================== MOBILE NAV =============================== */
+/* =============================== MOBILE NAV & LAYOUT =============================== */
 @media (max-width: 768px) {
-  .hamburger-btn {
-  cursor: pointer;
-  background: transparent;
-  border: none;
-  padding: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-   #sideMenu {
-    display: flex;             /* use flex layout */
-    flex-direction: column;    /* stack items vertically */
-    gap: 0;                    /* no extra space between items */
-    padding-top: 90px;         /* space from top */
-    width: 320px;              /* menu width */
-    height: 100vh;             /* full viewport height */
-    position: fixed;           /* fixed to viewport */
+  /* Hamburger button */
+  .hamburger-btn {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Side menu */
+  #sideMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-top: 80px;
+    width: 280px;
+    height: 100vh;
+    position: fixed;
     top: 0;
-    right: -320px;             /* hidden offscreen by default */
+    right: -280px;
     background: var(--secondary-color);
     box-shadow: -10px 0 30px rgba(0,0,0,0.5);
     transition: right 0.35s ease;
     z-index: 1000;
   }
 
-  /* Slide-in when menu is open */
   #sideMenu.open {
     right: 0;
   }
 
-  /* Menu links stacked vertically */
   #sideMenu a {
     display: block;
     color: var(--bg-color);
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 600;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     text-decoration: none;
   }
 
   #sideMenu a:not(:last-child) {
     border-bottom: 1px solid rgba(255,255,255,0.08);
   }
-}
 
   #sideMenu a:hover,
   #sideMenu a:focus {
     background: rgba(61, 189, 236, 0.12);
     color: var(--accent-color);
-    outline: none;
   }
 
   body.menu-open {
     overflow: hidden;
   }
 
-  /* Services grid collapses to one column */
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Padding adjustments */
+  /* =============================== CONTENT PADDING =============================== */
   #content {
-    padding: 4rem 1.5rem 6rem;
+    padding: 3rem 1.25rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
   }
 
-  /* Header text smaller */
-  .services-header h1 {
-    font-size: 2.2rem;
+  /* =============================== SERVICES HEADER =============================== */
+  .services-header {
+    text-align: center;
+    gap: 1rem;
   }
 
-  /* About section text smaller */
+  .services-header h1,
+  .services-header h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .services-header p {
+    font-size: 1rem;
+    line-height: 1.65;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* =============================== SERVICES GRID =============================== */
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    justify-items: center;
+  }
+
+  .service-card {
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 360px;
+    width: 100%;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.3s ease;
+  }
+
+  .service-card .service-icon {
+    margin: 0 auto 0.5rem auto;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .service-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .service-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 360px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* =============================== ABOUT SECTION =============================== */
+  .about-section {
+    text-align: center;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
   .about-section h1 {
     font-size: 2rem;
+  }
+
+  .about-section p {
+    font-size: 1rem;
+    line-height: 1.65;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* =============================== FOOTER =============================== */
+  footer {
+    padding: 2.5rem 1rem;
+    text-align: center;
+    gap: 0.8rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  footer a {
+    display: block;
+    margin: 0.3rem 0;
+    font-size: 1rem;
+  }
+
+  /* =============================== CONTACT BUTTON =============================== */
+  .contact-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    display: inline-block;
+    margin: 0 auto;
   }
 }
 
