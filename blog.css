@@ -147,7 +147,7 @@ main {
   gap: 1rem;
 }
 
-.services-header h1 { font-size: 2.8rem; font-weight: 700; color: var(--primary-color); }
+.services-header h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 3rem; color: var(--primary-color); }
 .services-header p { max-width: 640px; font-size: 1.1rem; color: var(--secondary-color); line-height: 1.6; }
 
 .services-grid {
