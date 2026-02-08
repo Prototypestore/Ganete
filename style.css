@@ -111,51 +111,47 @@ main {
   justify-content: center;
 }
 
-  #sideMenu {
-    flex-direction: column;
-    gap: 0;
-    padding-top: 90px;
-    width: 320px;
-    height: 100vh;
-    position: fixed;
+   #sideMenu {
+    display: flex;             /* use flex layout */
+    flex-direction: column;    /* stack items vertically */
+    gap: 0;                    /* no extra space between items */
+    padding-top: 90px;         /* space from top */
+    width: 320px;              /* menu width */
+    height: 100vh;             /* full viewport height */
+    position: fixed;           /* fixed to viewport */
     top: 0;
-    right: -320px;
+    right: -320px;             /* hidden offscreen by default */
     background: var(--secondary-color);
     box-shadow: -10px 0 30px rgba(0,0,0,0.5);
     transition: right 0.35s ease;
+    z-index: 1000;
   }
 
+  /* Slide-in when menu is open */
   #sideMenu.open {
     right: 0;
   }
 
-  #sideMenu::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background: var(--accent-color);
-  }
-
+  /* Menu links stacked vertically */
   #sideMenu a {
-    color: var(--bg-color); /* white text on mobile */
+    display: block;
+    color: var(--bg-color);
     font-size: 1.2rem;
     font-weight: 600;
     padding: 1rem 2rem;
-    transition: background 0.25s ease, color 0.25s ease;
+    text-decoration: none;
   }
+
+  #sideMenu a:not(:last-child) {
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+}
 
   #sideMenu a:hover,
   #sideMenu a:focus {
     background: rgba(61, 189, 236, 0.12);
     color: var(--accent-color);
     outline: none;
-  }
-
-  #sideMenu a:not(:last-child) {
-    border-bottom: 1px solid rgba(255,255,255,0.08);
   }
 
   body.menu-open {
