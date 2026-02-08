@@ -3,36 +3,32 @@
     {
       "id": 1,
       "title": "Health tips & lifestyle advice",
-      "description": "Transform ideas into visually striking creations that capture attention and communicate your message clearly. Our graphic design services ensure your brand stands out across digital and print mediums, enhancing engagement and memorability."
+      "description": "Practical guidance to help you build healthier daily habits. From sleep and stress management to routines that support long-term wellbeing, these tips are designed to fit real life and create sustainable change."
     },
     {
       "id": 2,
       "title": "Nutrition & diet articles",
-      "description": "Learn how to eat smarter with meal ideas, diet guides, and nutrition tips that fit real life. I cover everything from healthy eating on a budget to nutrient-rich foods for energy and wellbeing."
+      "description": "Learn how to eat smarter with realistic meal ideas, diet guides, and nutrition tips. Topics include healthy eating on a budget, nutrient-rich foods, and simple strategies to improve energy and overall wellbeing."
     },
     {
       "id": 3,
       "title": "Mental health & wellness",
-      "description": "Find strategies to manage stress, reduce anxiety, and maintain a positive mindset. I share practical tools for self-care, mindfulness, and emotional balance that you can apply immediately."
+      "description": "Support for managing stress, reducing anxiety, and maintaining a balanced mindset. You’ll find practical tools for self-care, mindfulness, and emotional resilience that can be applied immediately."
     },
     {
       "id": 4,
       "title": "Fitness & movement",
-      "description": "Get exercises, workout plans, and movement tips designed to strengthen your body, increase flexibility, and boost overall fitness—no gym required."
+      "description": "Accessible workouts, movement tips, and exercise guidance to help you build strength, improve flexibility, and stay active—whether at home or on the go, no gym required."
     },
     {
       "id": 5,
       "title": "Sexual health & relationships",
-      "description": "Honest advice on intimacy, communication, and building stronger, healthier relationships. Learn how to improve connection and confidence in your personal life."
-    }
-    ,
+      "description": "Clear, respectful advice on intimacy, communication, and building healthier relationships. Learn how to strengthen connection, confidence, and emotional understanding in your personal life."
+    },
     {
       "id": 6,
       "title": "FAQs",
-      "description": "Expert advice and answers to your specific challenges.
-Every service is designed with your success in mind, giving you clarity, motivation, and support every step of the way. I’d love to hear from you! Reach out via:
-Email: gazacreations@yahoo.com 
-WhatsApp: 0616768017"
+      "description": "Answers to common questions and personalized guidance for your specific challenges. Each service is designed to give you clarity, motivation, and support every step of the way. Contact me via email at gazacreations@yahoo.com or WhatsApp at 0616768017."
     }
   ]
 }
