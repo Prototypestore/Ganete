@@ -13,14 +13,14 @@ html, body {
 
 /* =============================== ROOT COLORS =============================== */
 :root {
-  --primary-color: #800000;       /* deep maroon - main brand */
-  --secondary-color: #4a4a4a;     /* elegant dark text */
-  --neutral-bg: #f9f9f9;           /* soft, airy background */
-  --card-bg: #ffffff;              /* subtle card background */
-  --card-border: #d1d5db;          /* soft border */
-  --hover-shadow: rgba(0,0,0,0.08); /* subtle hover shadow */
-  --link-hover: #800000;           /* maroon hover for links */
-  --footer-text: #6b7280;          /* muted footer text */
+  --primary-color: #000000;       /* Black - main text / headings */
+  --secondary-color: #1f2b5b;     /* Dark blue - subheadings / text */
+  --accent-color: #3dbdec;        /* Bright blue - highlights / hover */
+  --bg-color: #ffffff;             /* White - background */
+  --card-bg: #ffffff;              /* White cards for contrast */
+  --card-border: #d1d5db;          /* Light gray border */
+  --hover-shadow: rgba(0, 0, 0, 0.08);
+  --footer-text: #1f2b5b;
 }
 
 /* =============================== BODY =============================== */
@@ -28,89 +28,92 @@ body {
   font-family: 'Segoe UI', Roboto, sans-serif;
   color: var(--secondary-color);
   line-height: 1.7;
-  background-color: var(--neutral-bg);
-  background-image: url("forest.svg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed;
-}
-
-/* Frost overlay for airiness */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(249, 249, 249, 0.88);
-  z-index: -1;
+  background-color: var(--bg-color);
 }
 
 /* =============================== GLOBAL STRUCTURE =============================== */
-header, main, footer {
-  width: 100%;
-}
-
 main {
   display: flex;
   flex-direction: column;
 }
 
 /* =============================== HEADER =============================== */
-header {
+.header-container {
   position: sticky;
   top: 0;
-  background: rgba(255,255,255,0.9);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid var(--card-border);
   z-index: 1000;
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 1rem 2rem;
+  background: var(--bg-color);
+  border-bottom: 1px solid var(--card-border);
 }
 
 /* Logo */
-header .logo img {
-  height: 75px;           /* adjust as needed */
-  width: 75px;            /* same as height for perfect circle */
+.header-container .logo img {
+  height: 75px;
+  width: 75px;
   display: block;
-  border-radius: 50%;     /* makes the logo circular */
-  object-fit: cover;      /* keeps the logo centered and scaled nicely */
-  padding: 5px;           /* optional: adds some breathing space inside the circle */
-  background-color: #5C0B0B; /* matches your burgundy background, optional for elegance */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* subtle depth */
-  transition: transform 0.3s ease; /* optional: hover effect */
+  border-radius: 50%;
+  object-fit: cover;
+  padding: 5px;
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
 }
 
-/* Optional: hover effect for sleek feel */
-header .logo img:hover {
-  transform: scale(1.05); /* slightly enlarge on hover */
+.header-container .logo img:hover {
+  transform: scale(1.05);
 }
 
-/* SVG Hamburger */
-/* === SVG HAMBURGER FIX === */
-#open-profile-menu rect {
-  fill: #ffffff;              /* white by default */
-  transition: fill 0.3s ease;
+/* Desktop nav */
+#sideMenu {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  position: static;
+  height: auto;
+  width: auto;
+  background: transparent;
+  padding: 0;
 }
 
-.hamburger-btn:hover #open-profile-menu rect,
-.hamburger-btn:focus-visible #open-profile-menu rect {
-  fill: #8a7cf6;              /* purple on hover/focus */
+#sideMenu a {
+  color: var(--secondary-color);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.25s ease;
 }
 
+#sideMenu a:hover {
+  color: var(--accent-color);
+}
+
+/* Hamburger */
 .hamburger-btn {
   background: none;
   border: none;
   padding: 0;
   margin: 0;
   cursor: pointer;
-  display: flex;
+  display: none; /* hidden on desktop */
   align-items: center;
 }
 
-/* ================= SIDE HAMBURGER MENU ================= */
+#open-profile-menu rect {
+  fill: var(--primary-color);
+  transition: fill 0.3s ease;
+}
 
-/* Overlay (background dim) */
+.hamburger-btn:hover #open-profile-menu rect,
+.hamburger-btn:focus-visible #open-profile-menu rect {
+  fill: var(--accent-color);
+}
+
+/* =============================== SIDE HAMBURGER MENU (MOBILE) =============================== */
 #menuOverlay {
   position: fixed;
   inset: 0;
@@ -121,34 +124,19 @@ header .logo img:hover {
   z-index: 998;
 }
 
-/* Show overlay */
 #menuOverlay.active {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* Side menu container */
 #sideMenu {
-  position: fixed;
-  top: 0;
-  right: -320px; /* hidden */
-  width: 320px;
-  height: 100vh;
-  background: #000;
-  z-index: 999;
-  display: flex;
-  flex-direction: column;
-  padding-top: 90px;
   transition: right 0.35s ease;
-  box-shadow: -10px 0 30px rgba(0,0,0,0.5);
 }
 
-/* Open state */
 #sideMenu.open {
   right: 0;
 }
 
-/* Thin purple accent strip */
 #sideMenu::before {
   content: "";
   position: absolute;
@@ -156,65 +144,38 @@ header .logo img:hover {
   left: 0;
   width: 4px;
   height: 100%;
-  background: #8a7cf6;
+  background: var(--accent-color);
 }
 
-/* Menu links — PRIMARY */
 #sideMenu a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.25rem;
+  color: var(--bg-color);
+  font-size: 1.2rem;
   font-weight: 600;
-  padding: 0.85rem 2rem;
+  padding: 1rem 2rem;
   transition: background 0.25s ease, color 0.25s ease;
 }
 
-/* Hover / focus */
 #sideMenu a:hover,
 #sideMenu a:focus {
-  background: rgba(138, 124, 246, 0.12);
-  color: #8a7cf6;
+  background: rgba(61, 189, 236, 0.12);
+  color: var(--accent-color);
   outline: none;
 }
 
-/* Visual hierarchy spacing */
 #sideMenu a:not(:last-child) {
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-/* Prevent page scroll when menu open */
 body.menu-open {
   overflow: hidden;
 }
 
-/* Nav */
-header nav {
-  margin-left: auto;
-}
-
-header ul {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
-header a {
-  text-decoration: none;
-  font-weight: 500;
-  color: var(--secondary-color);
-  transition: color 0.25s ease;
-}
-
-header a:hover {
-  color: var(--link-hover);
-}
-
-/* Contact button (most important CTA) */
+/* =============================== CONTACT BUTTON =============================== */
 .contact-btn {
   padding: 0.55rem 1.4rem;
   border-radius: 999px;
-  border: 1px solid var(--primary-color);
-  color: var(--primary-color);
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
   background: transparent;
   font-weight: 500;
   white-space: nowrap;
@@ -222,8 +183,8 @@ header a:hover {
 }
 
 .contact-btn:hover {
-  background: var(--primary-color);
-  color: #ffffff;
+  background: var(--accent-color);
+  color: var(--bg-color);
 }
 
 /* =============================== SERVICES SECTION =============================== */
@@ -282,8 +243,14 @@ header a:hover {
 
 .service-card:hover {
   transform: translateY(-6px);
-  border-color: var(--primary-color);
+  border-color: var(--accent-color);
   box-shadow: 0 14px 30px var(--hover-shadow);
+}
+
+.service-card .service-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-color);
 }
 
 .service-card h3 {
@@ -295,11 +262,34 @@ header a:hover {
 .service-card p {
   font-size: 1rem;
   color: var(--secondary-color);
+  line-height: 1.5;
+}
+
+/* =============================== ABOUT SECTION =============================== */
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  text-align: center;
+}
+
+.about-section h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+  max-width: 680px;
+  line-height: 1.6;
 }
 
 /* =============================== FOOTER =============================== */
 footer {
-  background: var(--card-bg);
+  background: var(--bg-color);
   border-top: 1px solid var(--card-border);
   padding: 3rem 2rem;
   display: flex;
@@ -314,8 +304,60 @@ footer p {
   color: var(--footer-text);
 }
 
-footer img {
-  height: 48px;
-  width: auto;
-  opacity: 0.85;
+footer a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+footer a:hover {
+  color: var(--accent-color);
+}
+
+/* =============================== MOBILE RESPONSIVE =============================== */
+@media (max-width: 768px) {
+
+  /* Hamburger visible */
+  .hamburger-btn {
+    display: flex;
+  }
+
+  /* Hide desktop nav links on mobile */
+  #sideMenu {
+    flex-direction: column;
+    gap: 0;
+    padding-top: 90px;
+    width: 320px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -320px;
+    background: var(--secondary-color);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+    transition: right 0.35s ease;
+  }
+
+  #sideMenu.open {
+    right: 0;
+  }
+
+  /* Services grid collapses to one column */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Padding adjustments */
+  #content {
+    padding: 4rem 1.5rem 6rem;
+  }
+
+  /* Header text smaller */
+  .services-header h1 {
+    font-size: 2.2rem;
+  }
+
+  /* About section text smaller */
+  .about-section h1 {
+    font-size: 2rem;
+  }
 }
