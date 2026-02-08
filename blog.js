@@ -46,16 +46,3 @@ async function renderServices() {
 
   container.appendChild(grid);
 }
-
-// Hamburger menu toggle
-document.addEventListener("DOMContentLoaded", () => {
-  renderServices();
-
-  const hamburger = document.querySelector(".hamburger-btn");
-  const sideMenu = document.getElementById("sideMenu");
-  hamburger.addEventListener("click", () => {
-    sideMenu.classList.toggle("open");
-    document.body.classList.toggle("menu-open");
-  });
-});
-
