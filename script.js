@@ -6,6 +6,7 @@ fetch("content.json")
     /* ---------- ABOUT SECTION ---------- */
     const aboutSection = document.createElement("section");
     aboutSection.className = "about-section";
+    aboutSection.id = "about";
 
     const aboutTitle = document.createElement("h1");
     aboutTitle.textContent = "Dr Gazern";
@@ -21,6 +22,7 @@ fetch("content.json")
     /* ---------- SERVICES HEADER ---------- */
     const header = document.createElement("div");
     header.className = "services-header";
+    header.id = "services";
 
     const h1 = document.createElement("h1");
     h1.textContent = "Services";
