@@ -13,14 +13,14 @@ html, body {
 
 /* =============================== ROOT COLORS =============================== */
 :root {
-  --primary-color: #000000;
-  --secondary-color: #1f2b5b;
-  --accent-color: #3dbdec;
-  --bg-color: #ffffff;
-  --card-bg: #ffffff;
-  --card-border: #d1d5db;
-  --hover-shadow: rgba(0,0,0,0.08);
-  --footer-text: #1f2b5b;
+  --primary-color: #000000;       /* Black - main text / headings */
+  --secondary-color: #1f2b5b;     /* Dark blue - subheadings / text / mobile nav */
+  --accent-color: #3dbdec;        /* Bright blue - highlights / hover */
+  --bg-color: #ffffff;             /* White - background */
+  --card-bg: #ffffff;              /* White cards for contrast */
+  --card-border: #d1d5db;          /* Light gray border */
+  --hover-shadow: rgba(0, 0, 0, 0.08);
+  --footer-text: #666666;          /* grey footer text */
 }
 
 /* =============================== BODY =============================== */
@@ -31,50 +31,21 @@ body {
   background-color: var(--bg-color);
 }
 
-/* =============================== MOBILE LAYOUT (DEFAULT) =============================== */
+/* =============================== GLOBAL STRUCTURE =============================== */
 main {
   display: flex;
   flex-direction: column;
   gap: 3rem;
   padding: 2rem 1rem;
-  max-width: 100%;
 }
 
-/* HEADER */
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: var(--bg-color);
-  border-bottom: 1px solid var(--card-border);
-}
-
-.header-container .logo img {
-  height: 60px;
-  width: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-  padding: 5px;
-  background-color: var(--primary-color);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-}
-
-.header-container .logo img:hover {
-  transform: scale(1.05);
-}
-
-/* MOBILE NAV */
+/* =============================== MOBILE NAV =============================== */
 .hamburger-btn {
-  display: flex;
   cursor: pointer;
   background: transparent;
   border: none;
   padding: 0.5rem;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -84,13 +55,12 @@ main {
   flex-direction: column;
   gap: 0;
   padding-top: 80px;
-  width: 260px;
+  width: 280px;
   height: 100vh;
   position: fixed;
   top: 0;
-  right: -260px;
+  right: -280px;
   background: var(--secondary-color);
-  box-shadow: -10px 0 25px rgba(0,0,0,0.35);
   transition: right 0.35s ease;
   z-index: 1000;
 }
@@ -113,7 +83,7 @@ main {
 
 #sideMenu a:hover,
 #sideMenu a:focus {
-  background: rgba(61,189,236,0.15);
+  background: rgba(61, 189, 236, 0.15);
   color: var(--accent-color);
 }
 
@@ -121,7 +91,7 @@ body.menu-open {
   overflow: hidden;
 }
 
-/* ABOUT */
+/* =============================== ABOUT SECTION =============================== */
 .about-section {
   display: flex;
   flex-direction: column;
@@ -131,34 +101,34 @@ body.menu-open {
 }
 
 .about-section h1 {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 .about-section p {
   font-size: 0.95rem;
-  line-height: 1.5;
   max-width: 350px;
-  margin: 0 auto;
+  line-height: 1.5;
+  color: #666666;
 }
 
-/* SERVICES HEADER */
+/* =============================== SERVICES HEADER =============================== */
 .services-header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
   text-align: center;
 }
 
 .services-header h1 {
-  font-size: 1.9rem;
+  font-size: 2rem;
 }
 
 .services-header p {
   font-size: 0.95rem;
-  line-height: 1.5;
   max-width: 350px;
-  margin: 0 auto;
+  line-height: 1.5;
+  color: #666666;
 }
 
 /* =============================== SERVICES GRID =============================== */
@@ -257,7 +227,9 @@ footer a:hover {
   padding: 0.6rem 1.4rem;
 }
 
+/* =============================== DESKTOP =============================== */
 @media (min-width: 769px) {
+  
   /* =============================== DESKTOP NAV =============================== */
   #sideMenu {
     display: flex;
@@ -275,7 +247,6 @@ footer a:hover {
     font-size: 1rem;
     font-weight: 500;
     text-decoration: none;
-    transition: color 0.25s ease;
   }
 
   #sideMenu a:hover,
@@ -301,8 +272,8 @@ footer a:hover {
   }
   .about-section p {
     font-size: 1.1rem;
-    max-width: 500px; /* wider for readability */
-    color: #666666;   /* grey text */
+    max-width: 500px;
+    color: #666666;
   }
 
   /* =============================== SERVICES HEADER =============================== */
@@ -311,8 +282,8 @@ footer a:hover {
   }
   .services-header p {
     font-size: 1.1rem;
-    max-width: 500px; /* wider */
-    color: #666666;   /* grey text */
+    max-width: 500px;
+    color: #666666;
   }
 
   /* =============================== SERVICES GRID =============================== */
@@ -341,42 +312,15 @@ footer a:hover {
   .service-card p,
   .service-card .service-content {
     font-size: 1rem;
-    max-width: 500px; /* wider for longer text */
-    color: #666666;   /* default grey */
-    transition: color 0.25s ease;
-  }
-
-  /* Hover effect for policy/disclaimer links */
-  .service-card p a,
-  .service-card .service-content a,
-  .privacy-policy,
-  .disclaimer,
-  .terms-conditions {
-    color: #666666; /* grey */
-    text-decoration: none;
-    transition: color 0.25s ease;
-  }
-
-  .service-card p a:hover,
-  .service-card .service-content a:hover,
-  .privacy-policy:hover,
-  .disclaimer:hover,
-  .terms-conditions:hover {
-    color: var(--accent-color); /* light blue on hover */
+    max-width: 500px;
   }
 
   /* =============================== FOOTER =============================== */
   footer p,
   footer a {
     font-size: 0.95rem;
-    max-width: 500px; /* wider for privacy/disclaimer links */
+    max-width: 500px;
     text-align: center;
-    color: #666666;  /* grey text */
-    transition: color 0.25s ease;
-  }
-
-  footer a:hover {
-    color: var(--accent-color); /* light blue on hover */
   }
 
   .contact-btn {
