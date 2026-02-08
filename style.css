@@ -257,15 +257,13 @@ footer a {
   text-align: center;
 }
 
-/* =============================== DESKTOP ONLY =============================== */
 @media (min-width: 769px) {
-
-  /* DESKTOP NAV */
+  /* =============================== DESKTOP NAV =============================== */
   #sideMenu {
     display: flex;
     flex-direction: row;
     gap: 2rem;
-    background: transparent;
+    background: transparent; /* no shadow */
     padding: 0;
     position: static;
     height: auto;
@@ -277,6 +275,7 @@ footer a {
     font-size: 1rem;
     font-weight: 500;
     text-decoration: none;
+    transition: color 0.25s ease;
   }
 
   #sideMenu a:hover,
@@ -288,7 +287,7 @@ footer a {
     display: none;
   }
 
-  /* MAIN CONTENT */
+  /* =============================== MAIN CONTENT =============================== */
   main {
     max-width: 1200px;
     margin: 0 auto;
@@ -296,25 +295,27 @@ footer a {
     gap: 5rem;
   }
 
-  /* ABOUT */
+  /* =============================== ABOUT =============================== */
   .about-section h1 {
     font-size: 2.5rem;
   }
   .about-section p {
     font-size: 1.1rem;
-    max-width: 680px;
+    max-width: 500px; /* wider for readability */
+    color: #666666;   /* grey text */
   }
 
-  /* SERVICES HEADER */
+  /* =============================== SERVICES HEADER =============================== */
   .services-header h1 {
     font-size: 2.8rem;
   }
   .services-header p {
     font-size: 1.1rem;
-    max-width: 640px;
+    max-width: 500px; /* wider */
+    color: #666666;   /* grey text */
   }
 
-  /* SERVICES GRID */
+  /* =============================== SERVICES GRID =============================== */
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
@@ -340,15 +341,42 @@ footer a {
   .service-card p,
   .service-card .service-content {
     font-size: 1rem;
-    max-width: 100%;
+    max-width: 500px; /* wider for longer text */
+    color: #666666;   /* default grey */
+    transition: color 0.25s ease;
   }
 
-  /* FOOTER */
+  /* Hover effect for policy/disclaimer links */
+  .service-card p a,
+  .service-card .service-content a,
+  .privacy-policy,
+  .disclaimer,
+  .terms-conditions {
+    color: #666666; /* grey */
+    text-decoration: none;
+    transition: color 0.25s ease;
+  }
+
+  .service-card p a:hover,
+  .service-card .service-content a:hover,
+  .privacy-policy:hover,
+  .disclaimer:hover,
+  .terms-conditions:hover {
+    color: var(--accent-color); /* light blue on hover */
+  }
+
+  /* =============================== FOOTER =============================== */
   footer p,
   footer a {
     font-size: 0.95rem;
-    max-width: none;
+    max-width: 500px; /* wider for privacy/disclaimer links */
     text-align: center;
+    color: #666666;  /* grey text */
+    transition: color 0.25s ease;
+  }
+
+  footer a:hover {
+    color: var(--accent-color); /* light blue on hover */
   }
 
   .contact-btn {
