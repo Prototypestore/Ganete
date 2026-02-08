@@ -10,19 +10,8 @@ fetch("content.json")
     const aboutTitle = document.createElement("h1");
     aboutTitle.textContent = "Dr Gazern";
 
-    const story = document.createElement("p");
-    story.textContent = data.about.story;
-
-    const values = document.createElement("p");
-    values.textContent = data.about.values;
-
-    const credibility = document.createElement("p");
-    credibility.textContent = data.about.credibility;
-
     aboutSection.appendChild(aboutTitle);
-    aboutSection.appendChild(story);
-    aboutSection.appendChild(values);
-    aboutSection.appendChild(credibility);
+    main.appendChild(aboutSection);
 
     /* ---------- SERVICES HEADER ---------- */
     const header = document.createElement("div");
@@ -32,6 +21,7 @@ fetch("content.json")
     h1.textContent = "Services";
 
     header.appendChild(h1);
+    main.appendChild(header);
 
     /* ---------- SERVICES GRID ---------- */
     const grid = document.createElement("div");
@@ -43,7 +33,7 @@ fetch("content.json")
 
       const icon = document.createElement("div");
       icon.className = "service-icon";
-      icon.textContent = service.icon;
+      icon.textContent = service.icon || "🩺"; // default icon if none
 
       const h3 = document.createElement("h3");
       h3.textContent = service.title;
@@ -54,13 +44,9 @@ fetch("content.json")
       card.appendChild(icon);
       card.appendChild(h3);
       card.appendChild(p);
-
       grid.appendChild(card);
     });
 
-    /* ---------- APPEND ---------- */
-    main.appendChild(aboutSection);
-    main.appendChild(header);
     main.appendChild(grid);
   })
   .catch(err => console.error("JSON load error:", err));
