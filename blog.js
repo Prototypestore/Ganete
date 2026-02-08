@@ -2,7 +2,7 @@
 
 // Fetch JSON and render blog
 async function renderServices() {
-  const container = document.getElementById("content2");
+  const container = document.getElementById("blog");
 
   // Fetch JSON
   const response = await fetch('blog.json');
