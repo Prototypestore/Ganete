@@ -26,8 +26,13 @@ fetch("content.json")
     const h1 = document.createElement("h1");
     h1.textContent = "Services";
 
-    header.appendChild(h1);
-    main.appendChild(header);
+    const servicesText = document.createElement("p");
+servicesText.textContent =
+  "I offer personalized coaching, structured plans, and consultations tailored to your unique needs. My services include: One-on-One Coaching: Targeted guidance to help you reach your goals efficiently. Custom Plans: Step-by-step strategies designed to improve your health, habits, and lifestyle.";
+
+header.appendChild(h1);
+header.appendChild(servicesText);
+main.appendChild(header);
 
     /* ---------- SERVICES GRID ---------- */
     const grid = document.createElement("div");
