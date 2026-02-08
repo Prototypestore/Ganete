@@ -14,7 +14,7 @@ html, body {
 /* =============================== ROOT COLORS =============================== */
 :root {
   --primary-color: #000000;       /* Black - main text / headings */
-  --secondary-color: #1f2b5b;     /* Dark blue - subheadings / text */
+  --secondary-color: #1f2b5b;     /* Dark blue - subheadings / text / desktop nav */
   --accent-color: #3dbdec;        /* Bright blue - highlights / hover */
   --bg-color: #ffffff;             /* White - background */
   --card-bg: #ffffff;              /* White cards for contrast */
@@ -68,106 +68,113 @@ main {
   transform: scale(1.05);
 }
 
-/* Desktop nav */
-#sideMenu {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  position: static;
-  height: auto;
-  width: auto;
-  background: transparent;
-  padding: 0;
+/* =============================== DESKTOP NAV =============================== */
+@media (min-width: 769px) {
+  #sideMenu {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    background: transparent;
+    padding: 0;
+    position: static;
+    height: auto;
+    width: auto;
+  }
+
+  #sideMenu a {
+    color: var(--secondary-color); /* dark blue on desktop */
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.25s ease;
+  }
+
+  #sideMenu a:hover,
+  #sideMenu a:focus {
+    color: var(--accent-color);
+  }
+
+  .hamburger-btn {
+    display: none;
+  }
 }
 
-#sideMenu a {
-  color: var(--secondary-color);
-  font-size: 1rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: color 0.25s ease;
-}
+/* =============================== MOBILE NAV =============================== */
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: flex;
+  }
 
-#sideMenu a:hover {
-  color: var(--accent-color);
-}
+  #sideMenu {
+    flex-direction: column;
+    gap: 0;
+    padding-top: 90px;
+    width: 320px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -320px;
+    background: var(--secondary-color);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+    transition: right 0.35s ease;
+  }
 
-/* Hamburger */
-.hamburger-btn {
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  display: none; /* hidden on desktop */
-  align-items: center;
-}
+  #sideMenu.open {
+    right: 0;
+  }
 
-#open-profile-menu rect {
-  fill: var(--primary-color);
-  transition: fill 0.3s ease;
-}
+  #sideMenu::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--accent-color);
+  }
 
-.hamburger-btn:hover #open-profile-menu rect,
-.hamburger-btn:focus-visible #open-profile-menu rect {
-  fill: var(--accent-color);
-}
+  #sideMenu a {
+    color: var(--bg-color); /* white text on mobile */
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    transition: background 0.25s ease, color 0.25s ease;
+  }
 
-/* =============================== SIDE HAMBURGER MENU (MOBILE) =============================== */
-#menuOverlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 998;
-}
+  #sideMenu a:hover,
+  #sideMenu a:focus {
+    background: rgba(61, 189, 236, 0.12);
+    color: var(--accent-color);
+    outline: none;
+  }
 
-#menuOverlay.active {
-  opacity: 1;
-  pointer-events: auto;
-}
+  #sideMenu a:not(:last-child) {
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
 
-#sideMenu {
-  transition: right 0.35s ease;
-}
+  body.menu-open {
+    overflow: hidden;
+  }
 
-#sideMenu.open {
-  right: 0;
-}
+  /* Services grid collapses to one column */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
 
-#sideMenu::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--accent-color);
-}
+  /* Padding adjustments */
+  #content {
+    padding: 4rem 1.5rem 6rem;
+  }
 
-#sideMenu a {
-  color: var(--bg-color);
-  font-size: 1.2rem;
-  font-weight: 600;
-  padding: 1rem 2rem;
-  transition: background 0.25s ease, color 0.25s ease;
-}
+  /* Header text smaller */
+  .services-header h1 {
+    font-size: 2.2rem;
+  }
 
-#sideMenu a:hover,
-#sideMenu a:focus {
-  background: rgba(61, 189, 236, 0.12);
-  color: var(--accent-color);
-  outline: none;
-}
-
-#sideMenu a:not(:last-child) {
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-body.menu-open {
-  overflow: hidden;
+  /* About section text smaller */
+  .about-section h1 {
+    font-size: 2rem;
+  }
 }
 
 /* =============================== CONTACT BUTTON =============================== */
@@ -197,7 +204,6 @@ body.menu-open {
   gap: 5rem;
 }
 
-/* Section header */
 .services-header {
   display: flex;
   flex-direction: column;
@@ -220,7 +226,6 @@ body.menu-open {
   line-height: 1.6;
 }
 
-/* Services grid */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -229,7 +234,6 @@ body.menu-open {
   align-items: stretch;
 }
 
-/* Service cards */
 .service-card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
@@ -312,52 +316,4 @@ footer a {
 
 footer a:hover {
   color: var(--accent-color);
-}
-
-/* =============================== MOBILE RESPONSIVE =============================== */
-@media (max-width: 768px) {
-
-  /* Hamburger visible */
-  .hamburger-btn {
-    display: flex;
-  }
-
-  /* Hide desktop nav links on mobile */
-  #sideMenu {
-    flex-direction: column;
-    gap: 0;
-    padding-top: 90px;
-    width: 320px;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    right: -320px;
-    background: var(--secondary-color);
-    box-shadow: -10px 0 30px rgba(0,0,0,0.5);
-    transition: right 0.35s ease;
-  }
-
-  #sideMenu.open {
-    right: 0;
-  }
-
-  /* Services grid collapses to one column */
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Padding adjustments */
-  #content {
-    padding: 4rem 1.5rem 6rem;
-  }
-
-  /* Header text smaller */
-  .services-header h1 {
-    font-size: 2.2rem;
-  }
-
-  /* About section text smaller */
-  .about-section h1 {
-    font-size: 2rem;
-  }
 }
